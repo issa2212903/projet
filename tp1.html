@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  function altitudeFinale(commandes) {
+    let altitude = 0;
+
+    for (let i = 0; i < commandes.length; i++) {
+        let commande = commandes[i];
+        let action = commande[1];
+        let valeur = commande[2];
+
+        if (action === "monte") {
+            altitude =  altitude + valeur;
+        } else if (action === "descend") {
+            altitude =  altitude-valeur;
+        } else if (action === "atterrissage") {
+            break;
+        }
+    }
+
+    return altitude;
+}
+
+let commandes = [
+    [0, "monte", 300],
+    [2, "monte", 200],
+    [5, "descend", 100],
+    [10, "monte", 50],
+    [12, "descend", 400],
+    [13, "monte", 60],
+    [18, "descend", 70],
+    [20, "atterrissage"]
+];
+
+let altitudeFinaleDuDrone = altitudeFinale(commandes);
+console.log("Altitude finale du drone :", altitudeFinaleDuDrone);
+  
+
+    </script>
+
+</body>
+</html>

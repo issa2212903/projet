@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    const carte = [
+    ['Aloko', 3.5, false],
+    ['Samoussa', 4.5, true],
+    ['Samoussa légumes', 4.5, false],
+    ['Mafe', 7.5, true],
+    ['Thieb', 7.5, true],
+    ['Yassa', 7.5, true],
+    ['Dibi', 12.5, true],
+    ['Saf Sap', 13.5, true],
+    ['Thiakry', 5.5, false],
+    ['Salade de fruit', 3.5, false],
+    ['Jus bissap', 2.5, false],
+    ['Coca-Cola', 1.5, false]
+];
+
+
+const menu = [1, 1, 6, 9, 10];
+
+function calculeAddition(menu, carte) {
+    let total = 0;
+
+    for (let i = 0; i < menu.length; i++) {
+        const Indiceplat = menu[i];
+        total += carte[Indiceplat][1]; 
+    }
+
+    return total;
+}
+
+function estMenuVegetarien(menu, carte) {
+    for (let i = 0; i < menu.length; i++) {
+        const Indiceplat = menu[i];
+        if (carte[Indiceplat][2]) {
+            return false; 
+        }
+    }
+    return true; 
+}
+const coutAddition = calculeAddition(menu, carte);
+console.log("Coût de l'addition : " + coutAddition + " euros ");
+
+const menuVegetarien = estMenuVegetarien(menu, carte);
+console.log('Le menu est végétarien : ' + menuVegetarien);
+    </script>
+</body>
+</html>

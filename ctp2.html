@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <script>
+    const carte = [
+    ['Aloko', 3.5, false],
+    ['Samoussa', 4.5, true],
+    ['Samoussa légumes', 4.5, false],
+    ['Mafe', 7.5, true],
+    ['Thieb', 7.5, true],
+    ['Yassa', 7.5, true],
+    ['Dibi', 12.5, true],
+    ['Saf Sap', 13.5, true],
+    ['Thiakry', 5.5, false],
+    ['Salade de fruit', 3.5, false],
+    ['Jus bissap', 2.5, false],
+    ['Coca-Cola', 1.5, false]
+];
+const menu = [1, 1, 6, 9, 10];
+
+function coutMenu() {
+    cout=0
+    for (const mnu of menu) {
+        cout+=carte[mnu][1];
+    }
+    return cout ;
+}
+function estMenuVegetarien() {
+    for (const mnu of menu) {
+        if (carte[mnu][2]== True) {
+        return false;
+    }
+    }
+    return true
+}
+console.log("Coût total du menu : " + coutMenu() + " euros");
+    console.log("Le menu est végétarien : " + estMenuVegetarien());
+
+
+coutMenu=menu.reduce((cout,mnu)=>{
+    return cout+carte[mnu][1];
+},0)
+
+function estMenuVegetarien(menu) {
+    menu.forEach((valeur,index)=> {
+        if (carte[valeur][2]==true) {
+            return false
+        }
+    });
+    return true
+    }
+
+estMenuVegetarien1=menu.every(mnu=>carte[mnu][2]==false)
+    </script>
+</body>
+</html>

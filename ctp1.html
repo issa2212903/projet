@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let commandes = [
+        [0, "monte", 300],
+        [2, "monte", 200],
+        [5, "descend", 100],
+        [10, "monte", 50],
+        [12, "descend", 400],
+        [13, "monte", 60],
+        [18, "descend", 70],
+        [20, "atterrissage"]
+    ];
+    function altitude() {
+     let alt=0
+     for (const cmd of commandes) {
+        if (cmd[1]=="monte") {
+            alt+=cmd[2]
+        }else if (cmd[1]=="descend") {
+            alt-=cmd[2]
+        }
+        else{
+            break;
+        }
+     }  
+     return alt  
+    }
+    
+    console.log("Altitude à l'atterrissage:", altitude());
+    </script>
+   
+   <script>
+    function altitudeAtterissage(commandes, callback) {
+    let altitude = 0;
+    commandes.forEach(([temps, action, valeur]) => {
+        if (action === "monte") {
+            altitude += valeur;
+        } else if (action === "descend") {
+            altitude -= valeur;
+        } else if (action === "atterrissage") {
+            callback(altitude);
+        }
+    });
+}
+   </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mots = ['continent', 'vacances', 'chewing-gum', 'avalanche', 'histoire', 'binaire'];
+        function aSuperieuresDeux(mot) {
+   let cpt=0;
+   for (let i = 0; i < mot.length; i++) {
+    if (condition) {
+        const element = array[i];
+    }
+    
+   }
+}
+    </script>
+    <script>
+        function premierMotVetA(mots, callback) {
+    mots.sort(); // Trie 
+    for (let i = 0; i < mots.length; i++) {
+        const mot = mots[i];
+        if (mot.includes('v') && mot.match(/a/g).length >= 2) //contientAAuMoinsDeuxFois
+        {
+            callback(mot);
+            return; // Sortie dès qu'un mot est trouvé
+        }
+    }
+    callback(null); // Aucun mot ne satisfait les critères
+}
+    </script>
+</body>
+</html>
